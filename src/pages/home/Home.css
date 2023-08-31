@@ -1,0 +1,86 @@
+.home {
+  /* color: white */
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  height: 100vh;
+  width: 90%;
+  margin: 0 auto;
+  gap: 30px;
+  
+  /* background-image: url('https://p4.wallpaperbetter.com/wallpaper/385/360/993/car-porsche-workshop-vehicle-wallpaper-preview.jpg'); */
+  /* background-repeat: no-repeat; */
+  /* background-size: cover; */
+  /* background-position: center; */
+  /* background-attachment: fixed; */
+  
+  /* background: linear-gradient(to bottom, #1a1a1a, #2c3e50); */
+}
+
+
+
+
+.home__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* gap: 40px; */
+  color: white;
+  flex: 2;
+}
+
+.home__title {
+  /* color: #00bfff; */
+  /* color: #cccccc; */
+  /* color: #ffa500; */
+  /* color: #cc99ff; */
+  /* color: #27ae60 */
+  font-size: 4rem;
+  letter-spacing: 4px;
+
+}
+
+.home__paragraph {
+  color: var(--accent-color);
+  font-size: 1.1rem;
+  line-height: 1.5;
+  letter-spacing: 1,5px;
+  margin: 20px 0 16px 0;
+
+  /* color: red; */
+}
+
+.home__cta {
+  width: 140px;
+  height: 34px;
+  cursor: pointer;
+  /* background-color: #27ae60; */
+  background-color: var(--accent-color);
+
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  color: black;
+  font-weight: 600;
+  transition: ease-in .2s;
+}
+
+.home__cta:hover {
+  box-shadow: 0px 2px 12px #27ae60;
+}
+
+.home__img-container {
+  /* background-color: #fff; */
+  width: 570px;
+  height: 300px;
+  border-radius: 5px;
+  overflow: hidden;
+  flex: 2;
+  box-shadow: 2px 2px 4px rgb(20, 20, 20);
+}
+
+.home__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
