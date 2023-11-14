@@ -1,0 +1,19 @@
+.image__gallery {
+  /* background-color: red; */
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 1rem;
+  gap: 10px;
+}
+
+.gallery__title {
+  color: white;
+  text-align: center;
+  font-size: 3rem;
+}
+
+.image {
+  height: 250px;
+}
