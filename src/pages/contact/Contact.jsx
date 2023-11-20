@@ -1,23 +1,23 @@
 import { useState } from 'react';
 import './Contact.css'
 
-export default function Contact() {
+export default function Contact () {
   const [formData, setFormData] = useState({
     name: '',
     password: '',
     email: '',
+    auto: ''
   })
 
   const handleChange = (e) => {
     const { name, value } = e.target
-    // console.log(name , value)
     setFormData({ ...formData, [name]: value })
   }
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    // Aquí manejar los datos del formulario, enviarlos a un servidor.
-    console.log(formData)
+    // Aquí manejar los datos, enviarlos a un servidor.*
+    // console.log(formData)
   }
 
   return (
@@ -54,6 +54,16 @@ export default function Contact() {
               onChange={handleChange}
             />
             <i className='bx bxs-envelope' />
+          </label>
+          <label className='form__label'>
+            <input
+              type="text"
+              placeholder='Auto/modelo'
+              name="auto"
+              value={formData.auto}
+              onChange={handleChange}
+            />
+            <i className='bx bxs-car' />
           </label>
           <div className='form__remember-forgot'>
             <label>

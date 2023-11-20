@@ -1,6 +1,13 @@
 import './Footer.css'
 
 export default function Footer() {
+
+  const handleClick = (e) => {
+    const {src, alt, className} = e.target
+    e.preventDefault()
+    console.log(src, alt, className)
+  }
+
   return (
     <footer className="footer">
       <section className="footer__container">
@@ -85,7 +92,7 @@ export default function Footer() {
               </a>
             </li>
             <li className="footer__link">
-              <a href="#">
+              <a href="#" onClick={handleClick}>
                 <img
                   src="./src/assets/icons/bxl-youtube.svg"
                   alt=""
@@ -102,7 +109,7 @@ export default function Footer() {
             <p>Derechos reservados por Mecanicos Exper</p>
           </div>
           <div className="back">
-            <a href="" className="derechos__cta">Voleber al inicio</a>
+            <a href="#/header" className="derechos__cta">Voleber al inicio</a>
             <img className="back__img" src="./icons/bx-chevrons-up.svg" alt="" />
           </div>
         </div>

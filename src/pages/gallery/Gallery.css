@@ -1,7 +1,14 @@
+.gallery {
+  color: white;
+    height: 100vh;
+    /* background: red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .image__gallery {
-  /* background-color: red; */
   display: flex;
-  /* align-items: center; */
   justify-content: center;
   flex-wrap: wrap;
   padding: 1rem;
