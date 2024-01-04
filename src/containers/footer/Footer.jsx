@@ -1,107 +1,129 @@
 import './Footer.css'
 
-export default function Footer() {
-
-  const handleClick = (e) => {
-    const {src, alt, className} = e.target
-    e.preventDefault()
-    console.log(src, alt, className)
+const FooterDataLinks = [
+  {
+    title: "THE COMPANY",
+    links: [
+      { text: "Mecanicos AG", url: "#" },
+      { text: "Valores de Marca", url: "#" },
+      { text: "Contacto", url: "#" },
+      { text: "Careers", url: "#" },
+      { text: "Hágase concesionario", url: "#" },
+      { text: "Investor Relations", url: "#" },
+      { text: "Procurement", url: "#" },
+      { text: "Press Center", url: "#" },
+      { text: "Media Library", url: "#" },
+      { text: "Expert Motohall", url: "#" }
+    ]
+  },
+  {
+    title: "EXPERT WORLD",
+    links: [
+      { text: "News", url: "#" },
+      { text: "Racing", url: "#" },
+      { text: "Stories", url: "#" },
+      { text: "KTM Motohall", url: "#" },
+      { text: "Ride Expert", url: "#" },
+      { text: "Mecanicos Rally", url: "#" },
+      { text: "Newsletter", url: "#" },
+      { text: "Online Configurator", url: "#" },
+      { text: "Book a Testride", url: "#" }
+    ]
+  },
+  {
+    title: "SERVICE",
+    links: [
+      { text: "Garantia", url: "#" },
+      { text: "Seguridad", url: "#" },
+      { text: "Manuales", url: "#" },
+      { text: "Control de Mantenimiento y Seguridad", url: "#" },
+      { text: "Hotline Freeride", url: "#" },
+      { text: "Spare Part Finder", url: "#" }
+    ]
+  },
+  {
+    title: "LEGAL",
+    links: [
+      { text: "Impresion", url: "#" },
+      { text: "Privacy Policy", url: "#" },
+      { text: "Avisos Legales", url: "#" }
+    ]
   }
+]
 
+const footerSocialLinks = [
+  {
+    platform: "Facebook",
+    iconSrc: "./src/assets/icons/bxl-facebook-circle.svg",
+    url: "#"
+  },
+  {
+    platform: "Instagram",
+    iconSrc: "./src/assets/icons/bxl-instagram-alt.svg",
+    url: "#"
+  },
+  {
+    platform: "Twitter",
+    iconSrc: "./src/assets/icons/bxl-twitter.svg",
+    url: "#"
+  },
+  {
+    platform: "YouTube",
+    iconSrc: "./src/assets/icons/bxl-youtube.svg",
+    url: "#",
+  }
+]
+
+function FooterLinks () {
+  return (
+    <>
+      {
+        FooterDataLinks.map(({title, links}) => (
+          <div key={title} className="footer__c">
+            <h3 className="footer__title">{title}</h3>
+            <ul className="footer__links"> 
+              {
+                links.map(({text, url}) => (
+                  <li key={text} className="footer__link"><a href={url}>{text}</a></li>
+                ))
+              } 
+            </ul>
+          </div>
+        )) 
+      }
+    </>
+  )
+}
+
+function FooterSocialLiks () {
+  return (
+    <div className="footer__c">
+      <h3 className="footer__title">CONNECT</h3>
+      <ul className="footer__links footer__social">
+        {
+          footerSocialLinks.map(({iconSrc,platform,url}, index) => (
+            <li key={index} className="footer__link footer__icons">
+              <a href={url}>
+                <img
+                  src={iconSrc}
+                  alt={platform}
+                  className="footer__icon"
+                />
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  )
+}
+
+export default function Footer() {
   return (
     <footer className="footer">
       <section className="footer__container">
-        <div className="footer__c">
-          <h3 className="footer__title">THE COMPANY</h3>
-          <ul className="footer__links">  
-            <li className="footer__link"><a href="#">Mecanicos AG</a></li>
-            <li className="footer__link"><a href="#">Valores de Marca</a></li>
-            <li className="footer__link"><a href="#">Contacto</a></li>
-            <li className="footer__link"><a href="#">Careers</a></li>
-            <li className="footer__link"><a href="#">Hágase concesionario</a></li>
-            <li className="footer__link"><a href="#">Investor Relations</a></li>
-            <li className="footer__link"><a href="#">Procurement</a></li>
-            <li className="footer__link"><a href="#">Press Center</a></li>
-            <li className="footer__link"><a href="#">Media Library</a></li>
-            <li className="footer__link"><a href="#">Expert Motohall</a></li>
-          </ul>
-        </div>
-        <div className="footer__c">
-          <h3 className="footer__title">EXPERT WORLD</h3>
-          <ul className="footer__links">
-            <li className="footer__link"><a href="#">News</a></li>
-            <li className="footer__link"><a href="#">Racing</a></li>
-            <li className="footer__link"><a href="#">Stories</a></li>
-            <li className="footer__link"><a href="#">KTM Motohall</a></li>
-            <li className="footer__link"><a href="#">Ride Expert</a></li>
-            <li className="footer__link"><a href="#">Mecanicos Rally</a></li>
-            <li className="footer__link"><a href="#">Newsletter</a></li>
-            <li className="footer__link"><a href="#">Online Configurator</a></li>
-            <li className="footer__link"><a href="#">Book a Testride</a></li>
-          </ul>
-        </div>
-        <div className="footer__c">
-          <h3 className="footer__title">SERVICE</h3>
-          <ul className="footer__links">
-            <li className="footer__link"><a href="#">Garantia</a></li>
-            <li className="footer__link"><a href="#">Seguridad</a></li>
-            <li className="footer__link"><a href="#">Manuales</a></li>
-            <li className="footer__link">
-              <a href="#">Control de Mantenimiento y Seguridad</a>
-            </li>
-            <li className="footer__link"><a href="#">Hotline Freeride</a></li>
-            <li className="footer__link"><a href="#">Spare Part Finde</a></li>
-          </ul>
-        </div>
-        <div className="footer__c">
-          <h3 className="footer__title">LEGAL</h3>
-          <ul className="footer__links">
-            <li className="footer__link"><a href="#">Impresion</a></li>
-            <li className="footer__link"><a href="#">Privacy Policy</a></li>
-            <li className="footer__link"><a href="#">Avisos Legales</a></li>
-          </ul>
-        </div>
-        <div className="footer__c">
-          <h3 className="footer__title">CONNECT</h3>
-          <ul className="footer__links footer__social">
-            <li className="footer__link footer__icons">
-              <a href="">
-                <img
-                  src="./src/assets/icons/bxl-facebook-circle.svg"
-                  alt=""
-                  className="footer__icon"
-                />
-              </a>
-            </li>
-            <li className="footer__link">
-              <a href="#">
-                <img
-                  src="./src/assets/icons/bxl-instagram-alt.svg"
-                  alt=""
-                  className="footer__icon"
-                />
-              </a>
-            </li>
-            <li className="footer__link">
-              <a href="#">
-                <img
-                  src="./src/assets/icons/bxl-twitter.svg"
-                  alt=""
-                  className="footer__icon"
-                />
-              </a>
-            </li>
-            <li className="footer__link">
-              <a href="#" onClick={handleClick}>
-                <img
-                  src="./src/assets/icons/bxl-youtube.svg"
-                  alt=""
-                  className="footer__icon"
-                />
-              </a>
-            </li>
-          </ul>
-        </div>
+        <FooterLinks />
+        <FooterSocialLiks />
       </section>
       <section className="derechos">
         <div className="derechos__container">
